@@ -52,15 +52,6 @@ public class LibraryTest {
                 "请输入你的选择（1～3）：\n"), true);
     }
 
-    @Test
-    public void testaddStudentInfo() {
-        Library library = new Library();
-        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream("1\n".getBytes());
-        System.setIn(byteArrayInputStream);
-        library.menu();
-        assertEquals(outContent.toString().endsWith("请输入学生信息（格式：姓名, 学号, 学科: 成绩, ...），按回车提交：\n"), true);
-
-    }
 
 
     @Test
@@ -70,11 +61,24 @@ public class LibraryTest {
         System.setIn(byteArrayInputStream);
         library.menu();
 
-        assertEquals(outContent.toString().endsWith("成绩单\n" +
+        assertEquals(outContent.toString().endsWith("1. 添加学生\n" +
+                "2. 生成成绩单\n" +
+                "3. 退出\n" +
+                "请输入你的选择（1～3）：\n" +
+                "1. 添加学生\n" +
+                "2. 生成成绩单\n" +
+                "3. 退出\n" +
+                "请输入你的选择（1～3）：\n" +
+                "请输入学生信息（格式：姓名, 学号, 学科: 成绩, ...），按回车提交：\n" +
+                "1. 添加学生\n" +
+                "2. 生成成绩单\n" +
+                "3. 退出\n" +
+                "请输入你的选择（1～3）：\n" +
+                "成绩单\n" +
                 "姓名|English|Math|平均分|总分\n" +
                 "========================\n" +
                 "\n" +
-                "张三|99|98|46|197\n" +
+                "张三|99|98|98|197\n" +
                 "\n" +
                 "========================\n" +
                 "\n" +
@@ -94,17 +98,25 @@ public class LibraryTest {
         System.setIn(byteArrayInputStream);
         library.menu();
 
-        assertEquals(outContent.toString().endsWith("请按正确的格式输入（格式：姓名, 学号, 学科: 成绩, ...）：\n" +
+        assertEquals(outContent.toString().endsWith("1. 添加学生\n" +
+                "2. 生成成绩单\n" +
+                "3. 退出\n" +
+                "请输入你的选择（1～3）：\n" +
                 "1. 添加学生\n" +
                 "2. 生成成绩单\n" +
                 "3. 退出\n" +
-                "请输入你的选择（1～3）：" +
-                "\n" +
+                "请输入你的选择（1～3）：\n" +
+                "请输入学生信息（格式：姓名, 学号, 学科: 成绩, ...），按回车提交：\n" +
+                "请按正确的格式输入（格式：姓名, 学号, 学科: 成绩, ...）：\n" +
+                "1. 添加学生\n" +
+                "2. 生成成绩单\n" +
+                "3. 退出\n" +
+                "请输入你的选择（1～3）：\n" +
                 "成绩单\n" +
                 "姓名|English|Math|平均分|总分\n" +
                 "========================\n" +
                 "\n" +
-                "张三|99|98|46|197\n" +
+                "张三|99|98|98|197\n" +
                 "\n" +
                 "========================\n" +
                 "\n" +
